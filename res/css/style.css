@@ -65,7 +65,7 @@ header {
     z-index: 1;
 }
 
-header:hover {
+nav:hover {
     box-shadow: 0 -20px 30px #4d4d4d;
 }
 
@@ -201,4 +201,10 @@ nav div.avatar-container {
 
 .like-button.liked {
     background-color: #01579b;
+}
+
+#user-dropdown {
+    background-color: #fff;
+    display: none;
+    float: right;
 }

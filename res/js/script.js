@@ -1,11 +1,21 @@
 $(function() {
     fetchUserInfo().then(function(response) {
         let user = new User(response.firstname, response.lastname, response.email, response.avatar);
-        document.getElementById('avatar').src = user.avatar; //Displaying user avatar as soon as we get the image soruce
+        updateUserInfo(user);
     }).catch(function() {
         alert('Failed to fetch user data');
     });
+
+    $('#avatar').click(function() {
+        userDropDown();
+    })
 });
+
+function updateUserInfo(user) {
+    $('#avatar').attr('src', user.avatar);
+    $('#user-name').html(user.firstname + " " + user.lastname);
+    $('#user-email').html(user.email);
+}
 
 function fetchUserInfo() {
     return $.get(
@@ -20,3 +30,11 @@ function fetchUserInfo() {
         }
     );
 };
+
+function userDropDown() {
+    if ($('#user-dropdown').css('display') === 'none') {
+        $('#user-dropdown').css('display', 'inline');
+    } else {
+        $('#user-dropdown').css('display', 'none');
+    }
+}
