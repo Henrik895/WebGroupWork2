@@ -49,11 +49,11 @@ function addPost(post) {
         }
     }
 
-    if (post['text']){
-        let postTitle = document.createElement('div')
-        postTitle.className = 'post-title'
-        postContainer.appendChild(postTitle)
+    let postTitle = document.createElement('div') //this div needs to bee added even if there is no text on the post
+    postTitle.className = 'post-title'                    //or the original css doesnt apply padding to the post-actions div........
+    postContainer.appendChild(postTitle)
 
+    if (post['text']){
         let postText = document.createElement('h3')
         postText.innerText = post['text']
         postTitle.append(postText)
@@ -83,7 +83,6 @@ function fetchPosts() {
         {
             url: 'https://private-anon-2c32e94f5a-wad20postit.apiary-mock.com/posts',
             success: function(data) {
-                console.log(data)
                 addPosts(data)
             },
             error: function() {
@@ -92,4 +91,10 @@ function fetchPosts() {
         }
     );
 }
-fetchPosts()
+
+$(document).ready(function(){
+    fetchPosts()
+    $(document).click(".like-button", function(event){ //Attaching the onclick listener to the document ensures that any new buttons created by fetchPosts() also have the listener.
+        $(event.target).toggleClass("liked")
+    });
+});
