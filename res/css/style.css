@@ -58,6 +58,10 @@ button:hover {
     cursor: pointer;
 }
 
+button:active {
+    background-color: #0e73c2;
+}
+
 header {
     position: fixed;
     width: 100%;
@@ -106,6 +110,29 @@ nav div.search-container > button {
     padding: 5px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+nav div.search-container > button > span {
+    height: auto;
+}
+
+.search-button-icon {
+    font-size: 1.5em;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Toggle icon and text */
+.search-button-icon {
+    display: none;
+}
+
+.search-button-text {
+    display: block;
 }
 
 nav div.avatar-container {
@@ -207,4 +234,15 @@ nav div.avatar-container {
     background-color: #fff;
     display: none;
     float: right;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Toggle icon and text */
+    .search-button-icon {
+        display: block;
+    }
+
+    .search-button-text {
+        display: none;
+    }
 }
