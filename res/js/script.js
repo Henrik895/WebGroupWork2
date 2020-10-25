@@ -1,7 +1,6 @@
 $(function() {
     fetchUserInfo().then(function(response) {
-        let user = new User(response.firstname, response.lastname, response.email, response.avatar);
-        updateUserInfo(user);
+        updateUserInfo(response);
     }).catch(function() {
         alert('Failed to fetch user data');
     });
@@ -11,10 +10,10 @@ $(function() {
     })
 });
 
-function updateUserInfo(user) {
-    $('#avatar').attr('src', user.avatar);
-    $('#user-name').html(user.firstname + " " + user.lastname);
-    $('#user-email').html(user.email);
+function updateUserInfo(response) {
+    $('#avatar').attr('src', response.avatar);
+    $('#user-name').html(response.firstname + " " + response.lastname);
+    $('#user-email').html(response.email);
 }
 
 function fetchUserInfo() {
