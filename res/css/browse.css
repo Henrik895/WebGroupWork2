@@ -29,6 +29,10 @@
 
 .btn-purple {
     background-color: #82008f;
+    border-color: #82008f;
+    border-radius: 0.3em;
+    border-width: 3px;
+    border-style: solid;
 }
 
 .btn-purple:active {
@@ -36,9 +40,14 @@
 }
 
 .following {
-    background-color: #b83232;
+    background-color: #ffffff;
+    color: #82008f;
+    border-color: #82008f;
+    border-radius: 0.3em;
+    border-width: 3px;
+    border-style: solid;
 }
 
 .following:active {
-    background-color: #e14a4a;
+    background-color: #f2f2f2;
 }

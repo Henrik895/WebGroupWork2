@@ -71,6 +71,10 @@ $("document").ready(function () {
     }
 
     async function sendPostRequest(endpoint, data) {
+        // Since endpoints don't work yet, just return true for visualization purposes.
+        return true;
+
+
         let result = null;
         await $.post(endpoint, data, function (responseCode) {
             // if (responseCode === 200) {
