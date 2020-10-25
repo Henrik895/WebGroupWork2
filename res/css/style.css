@@ -230,10 +230,28 @@ nav div.avatar-container {
     background-color: #01579b;
 }
 
+#avatar {
+    cursor: pointer;
+}
+
 #user-dropdown {
     background-color: #fff;
     display: none;
     float: right;
+    padding: 0.25em 0;
+    width: 14vw;
+    font-size: 0.85vw;
+}
+
+#user-dropdown h3 {
+    padding: 0 0.5em;
+}
+
+#user-dropdown a {
+    display: inline-block;
+    border-top: 1px solid lightgray;
+    padding: 0.5em;
+    width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
